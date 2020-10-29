@@ -10,7 +10,7 @@
           :product="product"
           @add="addProductToCart(product)"
         ></ProductCard>
-        <button class="see-more-button" disabled @click="seeMoreProducts">See More</button>
+        <button class="see-more-button" @click="seeMoreProducts">See More</button>
       </main>
       <aside>
         <h2>Cart</h2>
@@ -157,9 +157,7 @@ aside {
     grid-template-columns: 20% 20% 20% 20%;
     grid-gap: 5%;
   }
-    aside {
-    overflow-y: hidden;
-  }
+
 }
 
 @media (min-width: 1200px) {
@@ -182,7 +180,6 @@ aside {
   aside {
     width: 30%;
     height: 95%;
-    overflow-y: hidden;
   }
   .cart-items-container {
     width: 100%;

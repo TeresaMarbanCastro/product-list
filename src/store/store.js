@@ -18,12 +18,8 @@ export default new Vuex.Store({
     cartProducts(state) {
       return state.cart;
     },
-    cartSumUp(state, getters) {
-        state.total= getters.cartProducts.reduce(
-          (acc, i) => acc + i.quantity * i.price,
-          0
-        );
-        return state.total   
+    cartSumUp(state) {
+      return state.total
     }
   },
   actions: {
@@ -45,6 +41,7 @@ export default new Vuex.Store({
           context.commit("increaseQuantity", cartItem);
         }
         context.commit("decreaseProductStock", product);
+        context.commit("updateTotal");
         axios
           .patch(`http://localhost:3000/grocery/${product.id}`, product)
           .then((response) => response.status)
@@ -56,6 +53,7 @@ export default new Vuex.Store({
       if (productItem.stock > 0) {
         context.commit("increaseQuantity", item);
         context.commit("decreaseProductStock", productItem);
+        context.commit("updateTotal");
       }
       axios
         .patch(`http://localhost:3000/grocery/${item.id}`, productItem)
@@ -66,6 +64,7 @@ export default new Vuex.Store({
       const productItem = context.state.products.find((i) => i.id === item.id);
       context.commit("decreaseQuantity", item);
       context.commit("increaseProductStock", productItem);
+      context.commit("updateTotal");
       if (item.quantity === 0) {
         context.commit("removeProductFromCart", item);
       }
@@ -76,8 +75,8 @@ export default new Vuex.Store({
     },
     seeMoreProducts(context) {
       const end = context.state.products.length;
-      const x = context.state.allProducts.slice(0, end + 2);
-      context.commit("setProducts", x);
+      const newProducts = context.state.allProducts.slice(0, end + 2);
+      context.commit("setProducts", newProducts);
     },
   },
   mutations: {
@@ -105,8 +104,11 @@ export default new Vuex.Store({
     decreaseProductStock(state, product) {
       product.stock--;
     },
-    getMoreProducts(state, newItems) {
-      state.products = state.products.concat(newItems);
-    },
+    updateTotal(state){
+      state.total= state.cart.reduce(
+        (acc, i) => acc + i.quantity * i.price,
+        0
+      );
+    }
   },
 });

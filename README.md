@@ -1,9 +1,9 @@
 # online-shop
 
-## Basic features
+## :large_blue_circle:Basic features
 This is a small shopping cart application mock in which the user can: 
 
-• See a large list of products
+• See a large list of products. Due to the large number of items, only a few portion of them are displayed. In order to be able to display more, a See More button was included. 
 
 • See stock availability for each product
 
@@ -12,33 +12,28 @@ This is a small shopping cart application mock in which the user can:
 • Add a product to the cart
 
 • Increase/decrease the quantity of the products already in the cart, decreasing down to 0 will remove the product from the cart
+Additionally, only available products in stock are shown in the products list section and increasing an item which has no more stock will not affect the cart, because it is unavailable. 
+
+• Descriptions are only seen in desktop screens (over 1200px)
 
 • See cart total amount
 
-Moreover, it is a responsive, mobile-first app. 
+Moreover, it is a responsive, mobile-first app (min screen size 400px).
 
-##  Bonus
 
-• The application will adapt from a single view layout (desktop mockup) to a multiple view layout as in the mobile mockup, the user will be able to navigate from product list view to cart view using the navigation arrow buttons.
+## :red_circle: Technologies
 
-• Add a product to favorite list
+• Vue 2 as main Framework
 
-• List the favorite products
-
-## Technologies
-
-• Vue 3 as main Framework
-
-• Vuex ^4.0.0-beta.4 to store and manage state
+• Vuex 3 to store and manage state
 
 • Axios for endpoint calls
 
     Available entry points:
 - | GET | /grocery: | get the list of products |
 - | PATCH | /grocery/:id: | update the item stock |
-- | GET | /grocery?favorite=1: |get the list of favorite items |
 
-## Architecture , app structure and component responsibility
+## :white_circle: Architecture , app structure and component responsibility
 
 This app is build upon component oriented architecture.
 The smaller components ( Product Card and Shopping Cart ) are "dumb" components which only receive data to render.
@@ -47,7 +42,7 @@ The Store contains the state of the application and its mutations to alter it by
 App view is in charge of holding the Products View and App is loaded in the main.js 
 
 
-## Setup 
+## :black_circle: Setup 
 
 ### Installing dependencies
 ```
@@ -67,11 +62,17 @@ Theres is a server-api folder containing the db.json to be run locally on http:/
 More info on its README file.
 
 
-## Testing
-Only four basic tests regarding search usage have been implemented. Further testing is recommended.
 
-They can be run through the command: npm run test.
+## :large_orange_diamond: Further improvements
 
-## Further improvements
-
-- 
+- Pagination: In order to see a large number of items, an overflow was created so that user can scroll up and down.
+However, while it is ok for mobile,  it is not a very elegant option for desktop. Thus, as a further improvement, 
+pagination may be included in order to display different views per products or load more content with scrolling down. 
+- Styling: styles have been disregarded in favour of JS functionality. Trying to be decisive in the Store and main features, there are 
+several styling issues that should be fix such as more appropriate responsive designs and general UX and UI experience. 
+- Testing: Testing has not been done, even though it was first thought of starting TDD, it was not possible to even attempt it,
+ so unit testing should be incorporated.
+- Accessibility: Keyboard navigation has been key to the development of this site, an assessment should be conducted in order to 
+incorporate other measures such as proven screen reader effectiveness, zooming and html semantics and ARIA.
+- Refactor: Even though focus was set on clean code, there are certain patterns that could be extracted to be reusable,
+such as the patch actions in the store or the creation of a button component to be reused along the application.

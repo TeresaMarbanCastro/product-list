@@ -70,19 +70,17 @@ img {
   }
   .item-main-info {
     width: 90%;
-}
-.quantity-container {
-  width: 15%;
-}
-.item-card-container {
-  padding-left: 50px;
-}
+  }
+
+  .item-card-container {
+    grid-template-columns: 40% 40% 10%;
+  }
 }
 @media (min-width: 1200px) {
   .img {
     width: 200px;
   }
-  .item-title{
+  .item-title {
     font-size: 15px;
   }
   .quantity-container {
