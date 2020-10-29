@@ -65,14 +65,15 @@ More info on its README file.
 
 ## :large_orange_diamond: Further improvements
 
-- Pagination: In order to see a large number of items, an overflow was created so that user can scroll up and down.
+- :memo: Pagination: In order to see a large number of items, an overflow was created so that user can scroll up and down.
 However, while it is ok for mobile,  it is not a very elegant option for desktop. Thus, as a further improvement, 
 pagination may be included in order to display different views per products or load more content with scrolling down. 
-- Styling: styles have been disregarded in favour of JS functionality. Trying to be decisive in the Store and main features, there are 
+- :shirt: Styling: styles have been disregarded in favour of JS functionality. Trying to be decisive in the Store and main features, there are 
 several styling issues that should be fix such as more appropriate responsive designs and general UX and UI experience. 
-- Testing: Testing has not been done, even though it was first thought of starting TDD, it was not possible to even attempt it,
+- :pouch: Testing: Testing has not been done, even though it was first thought of starting TDD, it was not possible to even attempt it,
  so unit testing should be incorporated.
-- Accessibility: Keyboard navigation has been key to the development of this site, an assessment should be conducted in order to 
+- :eyeglasses: Accessibility: Keyboard navigation has been key to the development of this site, an assessment should be conducted in order to 
 incorporate other measures such as proven screen reader effectiveness, zooming and html semantics and ARIA.
-- Refactor: Even though focus was set on clean code, there are certain patterns that could be extracted to be reusable,
+- :wrench: Refactor: Even though focus was set on clean code, there are certain patterns that could be extracted to be reusable,
 such as the patch actions in the store or the creation of a button component to be reused along the application.
+- :rocket: Migration to vue3 with vue4 was on its way but it was not finished to the final version only includes vue 2 and vuex 3.
