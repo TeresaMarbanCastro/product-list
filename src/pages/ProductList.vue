@@ -10,7 +10,7 @@
           :product="product"
           @add="addProductToCart(product)"
         ></ProductCard>
-        <button class="see-more-button" @click="seeMoreProducts">See More</button>
+        <button class="see-more-button" disabled @click="seeMoreProducts">See More</button>
       </main>
       <aside>
         <h2>Cart</h2>
@@ -82,12 +82,30 @@ export default {
 <style scoped>
 .product-list-root {
   background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 .product-list-header {
   padding-top: 20px;
   color: white;
 }
-
+.see-more-button {
+  width: 60px;
+  height: 60px;
+  align-self: end;
+  color: white;
+  border: none;
+  border-radius: 2%;
+  font-size: 20px;
+  margin: 0;
+  height: 50px;
+  width: 90%;
+  background: linear-gradient(
+    90deg,
+    rgba(247, 150, 30, 0.8953771289537713) 0%,
+    rgba(255, 60, 0, 1) 100%
+  );
+}
 .cart-items-container {
   display: flex;
   flex-direction: column;
@@ -128,12 +146,19 @@ ul {
   grid-gap: 4%;
   padding: 20px;
   margin-bottom: 100px;
+  height: 70%;
+  overflow-y: auto;
 }
-
+aside {
+  height: 30%;
+}
 @media (min-width: 768px) {
   .products-container {
     grid-template-columns: 20% 20% 20% 20%;
     grid-gap: 5%;
+  }
+    aside {
+    overflow-y: hidden;
   }
 }
 
@@ -144,6 +169,7 @@ ul {
     margin-right: 0;
     padding-right: 0;
     width: 70%;
+    height: 95%;
   }
   .checkout-button {
     width: 50%;
@@ -155,6 +181,8 @@ ul {
   }
   aside {
     width: 30%;
+    height: 95%;
+    overflow-y: hidden;
   }
   .cart-items-container {
     width: 100%;
@@ -165,11 +193,5 @@ ul {
   .total-container {
     margin-right: 5%;
   }
-  .see-more-button {
-    width: 60px;
-    height: 60px;
-    align-self: end;
-  }
-
 }
 </style>

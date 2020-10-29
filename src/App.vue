@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ProductList/>
+    <ProductList class="product-list"/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style>
-#app {
+html {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 15px;
@@ -24,6 +24,12 @@ export default {
   background-color: #f4a261;
   padding: 20px;
   height: 100vh;
+}
+#app {
+  height: 100vh;
+}
+.product-list {
+  height: 100%;
 }
 * {
   box-sizing: border-box;

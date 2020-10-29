@@ -64,10 +64,5 @@ export default {
   align-self: center;
   background-color: white;
 }
-@media (min-width: 768px) {
 
-}
-@media (min-width: 1200px) {
-
-}
 </style>

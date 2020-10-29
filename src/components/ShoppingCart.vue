@@ -32,8 +32,9 @@ img {
 }
 
 .item-card-container {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 40% 40% 10%;
+  grid-gap: 2%;
 }
 
 .item-main-info {
@@ -50,7 +51,7 @@ img {
   display: flex;
   justify-content: space-between;
   border: solid 1px lightgray;
-  width: 25%;
+  width: 45%;
 }
 
 .quantity-button {
@@ -61,13 +62,21 @@ img {
 .item-price {
   align-self: center;
   color: #0077b6;
-  width: 15%;
 }
 
 @media (min-width: 768px) {
   .img {
     width: 180px;
   }
+  .item-main-info {
+    width: 90%;
+}
+.quantity-container {
+  width: 15%;
+}
+.item-card-container {
+  padding-left: 50px;
+}
 }
 @media (min-width: 1200px) {
   .img {

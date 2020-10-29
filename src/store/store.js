@@ -9,7 +9,7 @@ export default new Vuex.Store({
     allProducts: [],
     products: [],
     cart: [],
-    total: 0
+    total: 0,
   },
   getters: {
     availableProducts(state) {
